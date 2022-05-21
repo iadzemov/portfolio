@@ -1,13 +1,13 @@
 ﻿@font-face {
 	font-family: Varsity;
 	src: local("Varsity"),
-		url(/portfolio/fonts/VarsityTeam-Bold.otf);
+		url(https://min.owncube.com/ilhana-webdev-f/fonts/VarsityTeam-Bold.otf);
 }
 
 @font-face {
 	font-family: BeautyDemo;
 	src: local("BeautyDemo"),
-		url(/portfolio/fonts/BeautyDemo.otf);
+		url(https://min.owncube.com/ilhana-webdev-f/fonts/BeautyDemo.otf);
 }
 
 /* 
@@ -148,7 +148,7 @@ li {
 	right: 0;
 	top: 0;
 	display: block;
-	background: #000 url('/portfolio/images/illustrationelement1.png') center;
+	background: #000 url('https://min.owncube.com/ilhana-webdev-f/images/illustrationelement1.png') center;
 	background-repeat: no-repeat;
 	background-size: contain;
 	z-index: -1;
@@ -159,7 +159,7 @@ li {
 
 @keyframes fadeIn {
 	0% {
-		background: #000 url('/portfolio/images/illustrationelement1.png') right;
+		background: #000 url('https://min.owncube.com/ilhana-webdev-f/images/illustrationelement1.png') right;
 		background-repeat: no-repeat;
 		background-size: contain;
 		background-position: -50% -50%;
@@ -376,7 +376,7 @@ nav {
 
 #content .firstname {
 	font-family: 'Varsity', sans-serif;
-	background: url('/portfolio/images/graphicelement.jpg') no-repeat;
+	background: url('/ilhana-webdev-f/images/graphicelement.jpg') no-repeat;
 	background-position: 50% 50%;
 	-webkit-background-clip: text;
 	-moz-background-clip: text;
@@ -403,7 +403,7 @@ nav {
 }
 
 #content .firstname:hover {
-	background: url('/portfolio/images/graphicelement.jpg') no-repeat;
+	background: url('/ilhana-webdev-f/images/graphicelement.jpg') no-repeat;
 	background-position: 95% 50%;
 	-webkit-background-clip: text;
 	-moz-background-clip: text;
@@ -414,7 +414,7 @@ nav {
 
 #content .lastname {
 	font-family: 'Varsity', sans-serif;
-	background: url('/portfolio/images/graphicelement.jpg') center right;
+	background: url('/ilhana-webdev-f/images/graphicelement.jpg') center right;
 	background-position: 15% 50%;
 	-webkit-background-clip: text;
 	-moz-background-clip: text;
@@ -438,7 +438,7 @@ nav {
 }
 
 #content .lastname:hover {
-	background: url('/portfolio/images/graphicelement.jpg') no-repeat;
+	background: url('/ilhana-webdev-f/images/graphicelement.jpg') no-repeat;
 	background-position: 90% 50%;
 	-webkit-background-clip: text;
 	-moz-background-clip: text;
@@ -751,7 +751,7 @@ nav {
 	background: linear-gradient(90deg, rgba(236, 139, 107, 1) 0%, rgba(236, 112, 154, 1) 100%);
 	background-size: cover;
 	margin: 0 auto;
-	padding: 6.5em 8.5em 13.5em 8.5em;
+	padding: 6.5em 8.5em 13.5em 9em;
 }
 
 .contactme h2 {
@@ -762,13 +762,12 @@ nav {
 
 .contactme .container {
 	position: relative;
-	max-width: 1600px;
+	width: 1460px;
 	display: flex;
 	justify-content: space-between;
 }
 
 .contactme .form {
-	max-width: 1600px;
 	font-family: monospace;
 }
 
@@ -845,7 +844,6 @@ input[type=reset] {
 	border: 0;
 	font-family: monospace;
 	font-size: 1.25em;
-
 	transition: 0.3s;
 }
 
@@ -857,9 +855,9 @@ input[type=reset]:hover {
 }
 
 .contactme .connect {
-	border-left: 4px solid #fff;
 	width: 500px;
-	padding: 1em 3em;
+	padding: 1em 4em;
+	border-left: 4px solid #fff;
 }
 
 .contactme .connect h3 {
@@ -967,7 +965,8 @@ input[type=reset]:hover {
 	}
 
 	.greeting-subtext {
-		font-size: 58%
+		width: 69ch;
+		font-size: 58%;
 	}
 
 	#parascroll a span {
@@ -1059,7 +1058,7 @@ input[type=reset]:hover {
 
 	.mywork .skills {
 		width: 330px;
-		padding: 2em 0 2em 0;
+		padding: 2em 0 5em 0;
 		font-size: 1em;
 		border: 0;
 	}
@@ -1099,7 +1098,7 @@ input[type=reset]:hover {
 
 	.mywork-grid .projects .projectone,
 	.mywork-grid .projects .projecttwo {
-		margin: 4em 0 4em 0;
+		margin: 4em 0 3em 0;
 	}
 
 	.contactme {
