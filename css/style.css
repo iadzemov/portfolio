@@ -1,0 +1,1179 @@
+﻿@font-face {
+	font-family: Varsity;
+	src: local("Varsity"),
+		url(https://min.owncube.com/ilhana-webdev-f/fonts/VarsityTeam-Bold.otf);
+}
+
+@font-face {
+	font-family: BeautyDemo;
+	src: local("BeautyDemo"),
+		url(https://min.owncube.com/ilhana-webdev-f/fonts/BeautyDemo.otf);
+}
+
+/* 
+
+By Ilhana Adzemovic
+May 2022
+
+1. Contents
+   I. Header
+      a. Intro
+	  b. Navigation
+
+   II. Content
+	  a. About Me
+	  b. Skills
+	  c. My Work
+
+   III. Contact
+      a. Form
+	  b. Connect
+
+   IV. Responsive
+
+
+2. Typography
+   I. Varsity
+   II. BeautyDemo
+   III. Monospace
+
+2. Color Palette 
+   Black, White, Grey: #000, #fff, #333, #585858, #aaa, #202020
+   Light Pink: #ffc0cb
+   Gradient Orange: rgba(236, 139, 107, 1) 	-- #ec8b6b
+   Gradient Pink: rgba(236, 112, 154, 1) 	-- #ec709a
+
+*/
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+#fullwrap {
+	perspective: 1px;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+.backup {
+	position: fixed;
+	right: 2rem;
+	bottom: 2rem;
+	background: #ddd;
+	border: 0;
+	padding: 0.25em 1em 0.5em 1em;
+	font-weight: 900;
+	font-size: 1.25em;
+	transition-duration: 0.4s;
+	z-index: 100;
+}
+
+.backup:hover {
+	background: #000;
+	color: #fff;
+}
+
+a {
+	text-decoration: none;
+}
+
+html {
+	height: 100%;
+	overflow: hidden;
+	scroll-behavior: smooth !important;
+}
+
+body {
+	color: #fff;
+	margin: 0;
+	padding: 0;
+	perspective: 1px;
+	transform-style: preserve-3d;
+	height: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	background: #333;
+}
+
+h1 {
+	font-size: 12.5em;
+}
+
+h2 {
+	font-size: 10em;
+}
+
+h3 {
+	font-size: 7.5em;
+}
+
+h4 {
+	font-size: 4.5em;
+}
+
+h5 {
+	font-size: 3.25em;
+}
+
+h6 {
+	font-size: 2em;
+}
+
+ul,
+li {
+	list-style-type: none;
+}
+
+/* I. Header */
+
+.intro {
+	box-sizing: border-box;
+	min-height: 100vh;
+	padding: 30vw 0 5vw;
+	position: static;
+	width: 100vw;
+}
+
+.intro,
+.intro::before {
+	background: 50% 50% / cover;
+}
+
+.intro::before {
+	position: absolute;
+	bottom: 0;
+	content: "";
+	left: 0;
+	right: 0;
+	top: 0;
+	display: block;
+	background: #000 url('https://min.owncube.com/ilhana-webdev-f/images/illustrationelement1.png') center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	z-index: -1;
+	height: 100vh;
+	transition: width 0.5s, height 4s;
+	animation: fadeIn 10s ease;
+}
+
+@keyframes fadeIn {
+	0% {
+		background: #000 url('https://min.owncube.com/ilhana-webdev-f/images/illustrationelement1.png') right;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: -50% -50%;
+	}
+
+	50% {
+		background-position: 50% 50%;
+	}
+
+	100% {
+		background-position: 50% 20%;
+	}
+}
+
+.header {
+	display: inline-block;
+	position: absolute;
+	left: 8%;
+	bottom: 40%;
+}
+
+.greeting-hello {
+	width: 72.75ch;
+	animation: typing 1.5s steps(22, end), blinking-cursor .5s step-end 6;
+	white-space: nowrap;
+	overflow: hidden;
+	border-right: 8px solid black;
+	font-family: monospace;
+}
+
+@keyframes typing {
+	from {
+		width: 0
+	}
+
+	to {
+		width: 100%
+	}
+}
+
+@keyframes blinking-cursor {
+
+	from,
+	to {
+		border-color: #fff
+	}
+
+	50% {
+		border-color: #000;
+	}
+}
+
+.greeting-subtext {
+	width: 65ch;
+	animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+	white-space: nowrap;
+	overflow: hidden;
+	border-right: 5px solid;
+	font-family: monospace;
+	font-weight: 200;
+	display: none;
+}
+
+.greeting-subtext h2 {
+	font-size: 2.15em;
+}
+
+@keyframes typing {
+	from {
+		width: 0
+	}
+}
+
+@keyframes blink {
+	50% {
+		border-color: #000
+	}
+}
+
+#parascroll a span {
+	position: absolute;
+	bottom: 15em;
+	left: 16%;
+	width: 150px;
+	height: 150px;
+	border-left: 4px solid #fff;
+	border-bottom: 4px solid #fff;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	-webkit-animation: arrow 1.5s infinite;
+	animation: arrow 1.5s infinite;
+	box-sizing: border-box;
+}
+
+@-webkit-keyframes arrow {
+	0% {
+		-webkit-transform: rotate(-45deg) translate(0, 0);
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		-webkit-transform: rotate(-45deg) translate(-20px, 20px);
+		opacity: 0;
+	}
+}
+
+@keyframes sdb05 {
+	0% {
+		transform: rotate(-45deg) translate(0, 0);
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: rotate(-45deg) translate(-20px, 20px);
+		opacity: 0;
+	}
+}
+
+nav {
+	position: relative;
+	font-size: 4em;
+	font-family: Varsity;
+}
+
+.navigation {
+	position: absolute;
+	top: 1em;
+	right: 5%;
+	display: flex;
+}
+
+.navleft {
+	color: #202020;
+	margin-right: 0.25em;
+}
+
+.navright a {
+	background: linear-gradient(60deg, #ec8b6b 0%, #ec8b6b 55%, #ec709a 80%) no-repeat 100% 100%;
+	background-size: 400% 400%;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transition: 300ms ease-in-out 5ms;
+	border-bottom: 2px solid #000;
+}
+
+.navright a:hover {
+	background: linear-gradient(90deg, #ec8b6b 0%, #ec709a 25%, #ec709a 75%) no-repeat 100% 0%;
+	background-position: 0 0;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-size: 400% 400%;
+	border-bottom: 2px solid #5b5b5b;
+}
+
+/* II. Content */
+
+#content {
+	margin: 0 auto;
+	width: 100%;
+	position: relative;
+	z-index: 1;
+	background: #333;
+	padding: 2em 5em 2em 5em;
+}
+
+#content .container {
+	width: 1680px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+#content .container_text {
+	width: 1600px;
+	margin: 0 auto;
+	padding: 0 5em 5em 5em;
+}
+
+#content .mynameis {
+	font-family: BeautyDemo;
+	font-weight: 100;
+	color: #fff;
+	margin: 6.5em 0 -3em 1em;
+	line-height: 5em;
+	height: 100px;
+	position: relative;
+	display: block;
+	animation: mynameis-slidein 11s ease;
+}
+
+#content .mynameis h2 {
+	font-size: 11em;
+	font-weight: 100;
+}
+
+@keyframes mynameis-slidein {
+	from {
+		transform: translateX(-100%);
+		opacity: 0.5;
+	}
+
+	to {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+}
+
+#content .firstname {
+	font-family: 'Varsity', sans-serif;
+	background: url('/ilhana-webdev-f/images/graphicelement.jpg') no-repeat;
+	background-position: 50% 50%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	padding: 3.5em 0 0 0;
+	margin: 1em -1em -4em 0;
+	line-height: 15em;
+	transition: all 2s ease;
+	-webkit-animation-name: fade-in;
+	-webkit-animation-duration: 6s;
+	-webkit-animation-timing-function: ease-in;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-iteration-count: infinite;
+	animation-name: fade-in;
+	animation-duration: 6s;
+	animation-timing-function: ease-in;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+#content .firstname h1,
+#content .lastname h1 {
+	font-size: 16em;
+}
+
+#content .firstname:hover {
+	background: url('/ilhana-webdev-f/images/graphicelement.jpg') no-repeat;
+	background-position: 95% 50%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+	transition: all 6s ease;
+}
+
+#content .lastname {
+	font-family: 'Varsity', sans-serif;
+	background: url('/ilhana-webdev-f/images/graphicelement.jpg') center right;
+	background-position: 15% 50%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+	padding: 2em 0 0 0;
+	margin: 1em 0 0 0;
+	line-height: 12em;
+	position: relative;
+	transition: all 2s ease;
+	-webkit-animation-name: fade-in;
+	-webkit-animation-duration: 6s;
+	-webkit-animation-timing-function: ease-in;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-iteration-count: infinite;
+	animation-name: fade-in;
+	animation-duration: 6s;
+	animation-timing-function: ease-in;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+#content .lastname:hover {
+	background: url('/ilhana-webdev-f/images/graphicelement.jpg') no-repeat;
+	background-position: 90% 50%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+	transition: all 6s ease;
+}
+
+#content .role {
+	transition: all 6s ease;
+	font-family: Varsity;
+	color: #5b5b5b;
+	margin: 2.5em 0 -1em 0.5em;
+	line-height: 5em;
+	position: relative;
+	display: block;
+}
+
+#content .role h3 {
+	font-size: 6.25em;
+}
+
+#content .location {
+	transition: all 6s ease;
+	font-family: Varsity;
+	color: #5b5b5b;
+	margin: 0 0 0 0.85em;
+	line-height: 5em;
+	position: relative;
+	display: block;
+}
+
+#content .location h4 {
+	font-size: 3.25em;
+	color: #202020;
+}
+
+#mywork {
+	margin: -6em 0 0 0;
+}
+
+.mywork {
+	margin: 0 auto;
+	width: 100%;
+	position: relative;
+	z-index: 1;
+	background: #333;
+	padding: 1em 2em 2em 2em;
+}
+
+.mywork .container {
+	width: 1720px;
+	margin: 0 auto;
+	padding: 3.5em 4em;
+	display: flex;
+}
+
+.mywork .context {
+	width: 850px;
+	border-right: 8px solid #434343;
+	padding: 2em 2em 3em 0;
+	font-family: monospace;
+	font-size: 1.75em;
+}
+
+.mywork .context b {
+	color: #ffc0cb;
+}
+
+.mywork .context p {
+	margin: 0 0 1em 0;
+}
+
+.mywork .context p.highlight {
+	margin: 0 0 1.5em 0;
+}
+
+.mywork .context strong {
+	font-size: 2em;
+	color: #ec709a;
+}
+
+.mywork .context em {
+	font-size: 2em;
+	color: #aaa;
+}
+
+.mywork .context u {
+	font-size: 2em;
+	color: #ec8b6b;
+}
+
+.mywork .skills {
+	width: 460px;
+	padding: 2.5em 3.5em;
+}
+
+.mywork .skills h3 {
+	font-family: Varsity;
+	font-size: 4em;
+	margin: 0 0 0.5em 0;
+}
+
+.mywork .skills p {
+	font-family: monospace;
+	font-size: 1.5em;
+	font-weight: 900;
+	margin: 0 0 0.75em 0;
+}
+
+.mywork .skills .progressbar {
+	width: 100%;
+	background: #5b5b5b;
+}
+
+.mywork .skills .progressbar span.progress-ninety {
+	margin: 0 0 1em 0;
+	width: 90%;
+	background: linear-gradient(90deg, rgba(236, 139, 107, 1) 0%, rgba(236, 112, 154, 1) 100%);
+	display: block;
+	padding: 0.75em;
+	font-family: monospace;
+	font-size: 1.5em;
+}
+
+.mywork .skills .progressbar span.progress-seventy {
+	margin: 0 0 1em 0;
+	width: 70%;
+	background: linear-gradient(90deg, rgba(236, 139, 107, 1) 0%, rgba(236, 112, 154, 1) 100%);
+	display: block;
+	padding: 0.75em;
+	font-family: monospace;
+	font-size: 1.5em;
+}
+
+.mywork .skills .progressbar span.progress-eightytwo {
+	margin: 0 0 1em 0;
+	width: 76%;
+	background: linear-gradient(90deg, rgba(236, 139, 107, 1) 0%, rgba(236, 112, 154, 1) 100%);
+	display: block;
+	padding: 0.75em;
+	font-family: monospace;
+	font-size: 1.5em;
+}
+
+.mywork .skills .progressbar span.progress-eightynine {
+	margin: 0 0 1em 0;
+	width: 89%;
+	background: linear-gradient(90deg, rgba(236, 139, 107, 1) 0%, rgba(236, 112, 154, 1) 100%);
+	display: block;
+	padding: 0.75em;
+	font-family: monospace;
+	font-size: 1.5em;
+}
+
+.mywork-grid .mywork-title {
+	color: #fff;
+	position: relative;
+	margin: 9.5em 2em 2em -1em;
+}
+
+.mywork-grid .mywork-title h2 {
+	color: #fff;
+	font-family: BeautyDemo;
+	font-size: 15em;
+	font-weight: 100;
+	position: absolute;
+	margin-top: -1em;
+	margin-left: 0.5em;
+}
+
+.mywork-grid {
+	margin: 0 auto;
+	width: 100%;
+	position: relative;
+	z-index: 1;
+	background: #000;
+}
+
+.mywork-grid .projects-row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.mywork-grid .projects {
+	width: 1460px;
+	margin: 0 auto;
+	padding: 7.5em 4em;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.mywork-grid .projects h4 {
+	font-size: 3.25em;
+	font-family: monospace;
+	background: #333;
+	display: inline-block;
+	margin: 0 0 1em 0;
+}
+
+.mywork-grid .projects h4 span {
+	font-size: 60%;
+	background: #000;
+	display: block;
+	color: #ec709a;
+}
+
+.mywork-grid .projects div {
+	width: 650px;
+}
+
+.mywork-grid .projects div img {
+	height: 330px;
+	width: 650px;
+	object-fit: cover;
+	position: relative;
+	opacity: 0.5;
+	display: block;
+	border: 1px solid #5b5b5b;
+	transition: all .70s ease-in-out;
+}
+
+.mywork-grid .projects div img:hover {
+	max-width: 100%;
+	position: relative;
+	opacity: 1;
+	transition: all .70s ease-in-out;
+}
+
+.mywork-grid .projects div button.demo {
+	cursor: pointer;
+	padding: 0.85em 1.65em;
+	margin: 1em 0;
+	font-family: monospace;
+	border: 1px solid #000;
+	transition: all .70s ease-in-out;
+}
+
+.mywork-grid .projects div button.demo:hover {
+	background: rgba(236, 112, 154, 1);
+	border: 1px solid rgba(236, 112, 154, 1);
+}
+
+.mywork-grid .projects div h5 {
+	font-size: 3em;
+}
+
+.mywork-grid .projects div button.toggle {
+	cursor: pointer;
+	background: #000;
+	display: block;
+	position: relative;
+	text-align: left !important;
+	font-family: monospace;
+	font-weight: 100;
+	color: #aaa;
+	font-weight: 600;
+	font-size: 1.25em;
+	letter-spacing: 0.05em;
+	display: inline-block;
+	border: 1px solid #000;
+	animation: sweep .85s ease-in-out;
+}
+
+.mywork-grid .projects div button.toggle:before {
+	font-family: "fontawesome";
+	content: '\f105';
+	color: #ffc0cb;
+	margin-right: 1em;
+	font-weight: 500;
+}
+
+.mywork-grid .projects div button.toggle:hover::before {
+	color: #fff;
+	font-weight: 900;
+}
+
+.mywork-grid .projects div button.toggle.is-open:before {
+	content: '\f107';
+	color: ffc0cb;
+	margin-right: 1em;
+}
+
+.mywork-grid .projects div .toggle-content {
+	font-family: monospace;
+	margin: 1em 0 0 0;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.5s ease-in-out;
+
+}
+
+.mywork-grid .projects div .toggle-content h6 {
+	color: #ec8b6b;
+	display: inline-block;
+	margin: 0 0 0.75em 0;
+}
+
+.mywork-grid .projects div .toggle-content p,
+.mywork-grid .projects div .toggle-content ol {
+	margin: 0 0 1.75em 0;
+}
+
+/* III. Contact */
+
+.contactme {
+	position: relative;
+	background: linear-gradient(90deg, rgba(236, 139, 107, 1) 0%, rgba(236, 112, 154, 1) 100%);
+	background-size: cover;
+	margin: 0 auto;
+	padding: 6.5em 8.5em 13.5em 8.5em;
+}
+
+.contactme h2 {
+	font-family: Varsity;
+	font-size: 8em;
+	display: block;
+}
+
+.contactme .container {
+	position: relative;
+	max-width: 1600px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.contactme .form {
+	max-width: 1600px;
+	font-family: monospace;
+}
+
+.contactme .form table.fillout {
+	border-collapse: collapse;
+	width: 100%;
+	color: #333;
+}
+
+.contactme form table.fillout td.labels {
+	border: 0;
+	border-bottom: 2.5px solid transparent;
+	width: 25%;
+	padding: 2em 2em 2em 3em;
+	font-size: 1.25em;
+	color: #fff;
+}
+
+.contactme .form p {
+	display: block;
+	margin: 1em;
+}
+
+.contactme .form input[type=text] {
+	background: #ffc0cb;
+	border: 0;
+	border-bottom: 2.5px solid transparent;
+	width: 92.5%;
+	padding: 1.25em;
+	font-family: monospace;
+	font-size: 1.25em;
+	color: #333;
+	transition: 0.3s;
+}
+
+.contactme .form textarea {
+	background: #ffc0cb;
+	border: 0;
+	border-bottom: 2.5px solid transparent;
+	width: 92.5%;
+	padding: 1.25em;
+	font-family: monospace;
+	font-size: 1.25em;
+	color: #333;
+	transition: 0.3s;
+	margin: 0.85em 0 0 0;
+}
+
+.contactme .form textarea:hover {
+	background: #333;
+	color: #fff;
+}
+
+.contactme .form input[type=text]:hover {
+	background: #333;
+	color: #fff;
+}
+
+.contactme form table.fillout tr.submit {
+	position: relative;
+}
+
+.contactme form table.fillout td.submit {
+	padding-top: 1em;
+	position: absolute;
+	right: 0;
+}
+
+.contactme .form input[type=button],
+input[type=submit],
+input[type=reset] {
+	background: #ffc0cb;
+	padding: 1.5em 3em;
+	border: 0;
+	font-family: monospace;
+	font-size: 1.25em;
+
+	transition: 0.3s;
+}
+
+.contactme .form input[type=button]:hover,
+input[type=submit]:hover,
+input[type=reset]:hover {
+	background: #333;
+	color: #fff;
+}
+
+.contactme .connect {
+	border-left: 4px solid #fff;
+	width: 500px;
+	padding: 1em 3em;
+}
+
+.contactme .connect h3 {
+	font-family: Varsity;
+	font-size: 4em;
+}
+
+.contactme .connect .socialicons {
+	margin: 1em 0;
+}
+
+.contactme .footerimg {
+	position: absolute;
+	right: 3.5em;
+	bottom: 0;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+.contactme .footerimg img {
+	width: 285px;
+	transition: 0.3s;
+	margin-bottom: -2em;
+}
+
+.contactme .footerimg img:hover {
+	opacity: 0.75;
+}
+
+.fa {
+	padding: 1em 1.25em;
+	text-decoration: none;
+	transition: 0.3s;
+	margin: 0 0.5em 0 0;
+}
+
+.fa-linkedin::before,
+.fa-github::before {
+	font-size: 2em;
+}
+
+.fa-linkedin {
+	background: #007bb5;
+	color: #fff;
+}
+
+.fa-github {
+	background: #5b5b5b;
+	color: #fff;
+}
+
+.fa-linkedin:hover,
+.fa-github:hover {
+	background: #333;
+}
+
+/* IV. Responsive */
+
+@media screen and (max-width: 600px) {
+
+	html,
+	body {
+		overflow-x: hidden !important;
+	}
+
+	* {
+		padding: 0;
+		margin: 0;
+	}
+
+	.header {
+		max-width: 300px;
+	}
+
+	.greeting-hello {
+		width: 55ch;
+		animation: typing 2s steps(22, end), blinking-cursor 1s step-end 6;
+	}
+
+	.greeting-hello h1 {
+		font-size: 5.5em;
+	}
+
+	@keyframes typing {
+		from {
+			width: 0
+		}
+
+		to {
+			width: 100%
+		}
+	}
+
+	@keyframes blinking-cursor {
+
+		from,
+		to {
+			border-color: #fff
+		}
+
+		50% {
+			border-color: transparent;
+		}
+	}
+
+	.greeting-subtext {
+		font-size: 58%
+	}
+
+	#parascroll a span {
+		bottom: 12em;
+		left: 32%;
+	}
+
+	.navigation {
+		display: none;
+	}
+
+	#content {
+		padding: 0;
+	}
+
+	#content .container {
+		width: 350px;
+		margin: 0 auto;
+		padding: 0;
+	}
+
+	#content .mynameis {
+		margin: 3em 0 -5em 0;
+		animation: mynameis-slidein 8s ease;
+	}
+
+	#content .mynameis h2 {
+		font-size: 5.85em;
+		margin: 0 0 -2em 0;
+	}
+
+	#content .firstname {
+		padding: 0;
+		line-height: 9em;
+	}
+
+	#content .lastname {
+		padding: 0;
+		line-height: 3em;
+	}
+
+	#content .firstname h1,
+	#content .lastname h1 {
+		font-size: 4em;
+	}
+
+	#content .role {
+		margin: 0;
+		line-height: 1.85em;
+	}
+
+	#content .role h3 {
+		font-size: 2em;
+	}
+
+	#content .location {
+		margin: 0;
+		line-height: 1.65em;
+	}
+
+	#content .location h4 {
+		font-size: 2em;
+	}
+
+	.mywork {
+		margin: 0 auto;
+		width: 360px;
+		padding: 0;
+	}
+
+	.mywork-grid {
+		padding: 2em 0 0 0;
+	}
+
+	.mywork .container {
+		width: 330px;
+		padding: 0 0 2em 0;
+		flex-flow: row wrap;
+		margin: 3em 0 0 0;
+	}
+
+	.mywork .context {
+		width: 340px;
+		padding: 0 0 2em 0;
+		font-size: 1.15em;
+		border-right: 0;
+		border-bottom: 8px solid #434343;
+	}
+
+	.mywork .skills {
+		width: 330px;
+		padding: 2em 0 2em 0;
+		font-size: 1em;
+		border: 0;
+	}
+
+	.mywork-grid .mywork-title {
+		color: #fff;
+		position: relative;
+		margin: 0;
+	}
+
+	.mywork-grid .mywork-title h2 {
+		color: #fff;
+		font-family: BeautyDemo;
+		font-size: 6em;
+		position: absolute;
+		margin-top: 0.25em;
+		margin-left: 0.5em;
+	}
+
+	.mywork-grid .projects {
+		width: 330px;
+		margin: 0;
+		padding: 6em 2em 0 2em;
+		display: flex;
+		justify-content: space-evenly;
+		flex-flow: row wrap;
+	}
+
+	.mywork-grid .projects div {
+		width: 330px;
+	}
+
+	.mywork-grid .projects div img {
+		height: 150px;
+		width: 330px;
+	}
+
+	.mywork-grid .projects .projectone,
+	.mywork-grid .projects .projecttwo {
+		margin: 4em 0 4em 0;
+	}
+
+	.contactme {
+		padding: 0;
+	}
+
+	.contactme .container {
+		width: 98%;
+		flex-flow: row wrap;
+		padding: 2em;
+	}
+
+	.contactme h2 {
+		font-size: 3.5em;
+	}
+
+	.contactme .form {
+		width: 330px;
+		padding: 0 0 6em 0;
+		border-bottom: 4px solid #fff;
+	}
+
+	.contactme form {
+		width: 300px;
+		padding: 2em 0;
+	}
+
+	.contactme form table.fillout td.labels {
+		padding: 0.5em 0.75em;
+		margin: 0 0 0.75em 0;
+		font-size: 1em;
+	}
+
+	.contactme .form input[type=text] {
+		padding: 0.55em;
+		margin: 0 0 0.35em 0;
+		width: 100%;
+	}
+
+	.contactme .form textarea {
+		padding: 0.55em;
+		width: 100%;
+	}
+
+	.contactme .form tr.submit {
+		width: 100%;
+		position: relative;
+	}
+
+	.contactme .form input[type=button],
+	input[type=submit],
+	input[type=reset] {
+		font-size: 1em;
+		position: absolute;
+		right: -1.30em;
+	}
+
+	.contactme .connect {
+		padding: 1.5em 0.25em 0 0;
+		border: 0;
+		width: 100%;
+	}
+
+	.contactme .connect h2 {
+		font-size: 3.5em;
+	}
+
+	.contactme .footerimg {
+		right: 2em;
+	}
+
+	.contactme .footerimg img {
+		width: 85px;
+		transition: 0.3s;
+		margin-bottom: -1em;
+	}
+}
