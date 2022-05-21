@@ -1,13 +1,13 @@
 ﻿@font-face {
 	font-family: Varsity;
 	src: local("Varsity"),
-		url(https://min.owncube.com/ilhana-webdev-f/fonts/VarsityTeam-Bold.otf);
+		url(/portfolio/fonts/VarsityTeam-Bold.otf);
 }
 
 @font-face {
 	font-family: BeautyDemo;
 	src: local("BeautyDemo"),
-		url(https://min.owncube.com/ilhana-webdev-f/fonts/BeautyDemo.otf);
+		url(/portfolio/fonts/BeautyDemo.otf);
 }
 
 /* 
@@ -148,7 +148,7 @@ li {
 	right: 0;
 	top: 0;
 	display: block;
-	background: #000 url('https://min.owncube.com/ilhana-webdev-f/images/illustrationelement1.png') center;
+	background: #000 url('/portfolio/images/illustrationelement1.png') center;
 	background-repeat: no-repeat;
 	background-size: contain;
 	z-index: -1;
@@ -159,7 +159,7 @@ li {
 
 @keyframes fadeIn {
 	0% {
-		background: #000 url('https://min.owncube.com/ilhana-webdev-f/images/illustrationelement1.png') right;
+		background: #000 url('/portfolio/images/illustrationelement1.png') right;
 		background-repeat: no-repeat;
 		background-size: contain;
 		background-position: -50% -50%;
@@ -376,7 +376,7 @@ nav {
 
 #content .firstname {
 	font-family: 'Varsity', sans-serif;
-	background: url('/ilhana-webdev-f/images/graphicelement.jpg') no-repeat;
+	background: url('/portfolio/images/graphicelement.jpg') no-repeat;
 	background-position: 50% 50%;
 	-webkit-background-clip: text;
 	-moz-background-clip: text;
@@ -403,7 +403,7 @@ nav {
 }
 
 #content .firstname:hover {
-	background: url('/ilhana-webdev-f/images/graphicelement.jpg') no-repeat;
+	background: url('/portfolio/images/graphicelement.jpg') no-repeat;
 	background-position: 95% 50%;
 	-webkit-background-clip: text;
 	-moz-background-clip: text;
@@ -414,7 +414,7 @@ nav {
 
 #content .lastname {
 	font-family: 'Varsity', sans-serif;
-	background: url('/ilhana-webdev-f/images/graphicelement.jpg') center right;
+	background: url('/portfolio/images/graphicelement.jpg') center right;
 	background-position: 15% 50%;
 	-webkit-background-clip: text;
 	-moz-background-clip: text;
@@ -438,7 +438,7 @@ nav {
 }
 
 #content .lastname:hover {
-	background: url('/ilhana-webdev-f/images/graphicelement.jpg') no-repeat;
+	background: url('/portfolio/images/graphicelement.jpg') no-repeat;
 	background-position: 90% 50%;
 	-webkit-background-clip: text;
 	-moz-background-clip: text;
